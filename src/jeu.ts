@@ -14,10 +14,17 @@ export class Jeu {
   ) {}
 
   pointPour(joueur: string): void {
+    if (this.vainqueur()) return;
+
     if (joueur === this.joueur1) {
       this.points1++;
     } else {
       this.points2++;
+    }
+    const vainqueur = this.vainqueur();
+    if (vainqueur) {
+      const perdant = vainqueur === this.joueur1 ? this.joueur2 : this.joueur1;
+      this.classement.enregistrer(vainqueur, perdant);
     }
   }
 
