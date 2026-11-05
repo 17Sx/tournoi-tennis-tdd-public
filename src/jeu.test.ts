@@ -51,3 +51,13 @@ describe("Étape 2 : le point décisif", () => {
     expect(jeuAuScore(4, 3).score()).toBe("Victoire Alice");
   });
 });
+
+describe("Étape 3 : la victoire", () => {
+  it("le joueur à Quarante qui marque gagne le match", () => {
+    expect(jeuAuScore(4, 1).score()).toBe("Victoire Alice");
+  });
+
+  it("le joueur 2 peut aussi gagner le match", () => {
+    expect(jeuAuScore(2, 4).score()).toBe("Victoire Bob");
+  });
+});
