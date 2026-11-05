@@ -41,3 +41,13 @@ describe("Étape 1 : les points", () => {
     expect(jeuAuScore(points, points).score()).toBe(attendu);
   });
 });
+
+describe("Étape 2 : le point décisif", () => {
+  it("à 40-40, le score affiche Égalité", () => {
+    expect(jeuAuScore(3, 3).score()).toBe("Égalité");
+  });
+
+  it("à Égalité, il n'y a pas d'avantage : le point suivant gagne le match", () => {
+    expect(jeuAuScore(4, 3).score()).toBe("Victoire Alice");
+  });
+});
